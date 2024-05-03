@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DecentSampler minVersion="1.8.14">
+  <!-- <groups ampVelTrack="0.0" attack="0.0" decay="1" sustain="0.430" release="0.024" volume="-1.1585dB"> -->
+  <groups ampVelTrack="0.0" volume="-2.1585dB">
+    <group seqMode="random" name="Grand Piano" silencedByTags="damp" silencingMode="normal" release="1.0">
+      <sample path="Samples/Piano E0.wav" volume="+1.0dB" rootNote="28" loNote="20" hiNote="28" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano A0.wav" volume="+1.0dB" rootNote="33" loNote="29" hiNote="34" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano D1.wav" volume="+1.0dB" rootNote="38" loNote="35" hiNote="38" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano F#1.wav" volume="+1.0dB" rootNote="42" loNote="39" hiNote="44" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C#2.wav" volume="+1.0dB" rootNote="49" loNote="45" hiNote="51" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano G#2.wav" volume="+1.0dB" rootNote="56" loNote="52" hiNote="57" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C#3.wav" volume="+1.0dB" rootNote="61" loNote="58" hiNote="63" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano G#3.wav" volume="+1.0dB" rootNote="68" loNote="64" hiNote="68" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C#4.wav" volume="+1.0dB" rootNote="73" loNote="69" hiNote="74" loVel="1" hiVel="127"  seqPosition="1" />
+
+      <sample path="Samples/Piano F#4.wav" volume="+1.0dB" rootNote="78" loNote="75" hiNote="78" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano F#4.wav" volume="+1.0dB" rootNote="78" loNote="79" hiNote="79" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C5.wav" volume="+1.0dB" rootNote="84" loNote="80" hiNote="83" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C5.wav" volume="+1.0dB" rootNote="84" loNote="84" hiNote="86" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano F#5.wav" volume="+1.0dB" rootNote="90" loNote="87" hiNote="87" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano F#5.wav" volume="+1.0dB" rootNote="90" loNote="88" hiNote="88" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano F#5.wav" volume="+1.0dB" rootNote="90" loNote="89" hiNote="90" loVel="1" hiVel="127"  seqPosition="1" />
+
+      <sample path="Samples/Piano G#5.wav" volume="+1.0dB" rootNote="92" loNote="91" hiNote="94" loVel="1" hiVel="127"  seqPosition="1" />
+
+      <sample path="Samples/Piano C6.wav" volume="+1.0dB" rootNote="96" loNote="95" hiNote="95" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C6.wav" volume="+1.0dB" rootNote="96" loNote="96" hiNote="96" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C6.wav" volume="+1.0dB" rootNote="96" loNote="97" hiNote="97" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C6.wav" volume="+1.0dB" rootNote="96" loNote="98" hiNote="98" loVel="1" hiVel="127"  seqPosition="1" />
+      <sample path="Samples/Piano C6.wav" volume="+1.0dB" rootNote="96" loNote="99" hiNote="99" loVel="1" hiVel="127"  seqPosition="1" />
+
+      <sample path="Samples/Piano F#6.wav" volume="+1.0dB" rootNote="102" loNote="100" hiNote="108" loVel="1" hiVel="127"  seqPosition="1" />
+    </group>
+  </groups>
+  <effects>
+    <effect type="lowpass_4pl" frequency="22000.0"/>
+    <effect type="reverb" wetLevel="0.03" roomSize="0.85" damping="O.2"/>
+    <!-- <effect type="chorus" mix="0.34" modDepth=".1" modRate="0.2"/> -->
+  </effects>
+ 
+  <ui width="812" height="522" bgImage="moodgiver-dark4-lg.png" layoutMode="relative" bgMode="top_left"  bgColor="FF000000">
+    <tab name="main">
+      <!-- Tone control -->
+      <labeled-knob x="490" y="240" label="Tone" type="float" minValue="60" maxValue="1200" value="850.0" textColor="FFFFFFFF" textSize="22">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+      </labeled-knob>
+
+      
+      <!-- Reverb controls -->
+      <labeled-knob x="596" y="240" label="Rev" type="float" minValue="0" maxValue="1.0" textColor="FFFFFFFF" value="0.3" textSize="20" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+      </labeled-knob>
+
+      <!-- <labeled-knob x="120" y="250" label="Reverb" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+      </labeled-knob> -->
+
+      <labeled-knob x="690" y="270" label="Room Size" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.4" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_ROOM_SIZE"/>
+      </labeled-knob>
+
+      <labeled-knob x="740" y="270" label="Damping" width="70" height="70" type="float" minValue="0" maxValue="1.0"
+                        textColor="FFFFFFFF" value="0.3" textSize="22" style="rotary_vertical_drag">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_DAMPING"/>
+      </labeled-knob>
+    </tab>
+  </ui>
+</DecentSampler>
